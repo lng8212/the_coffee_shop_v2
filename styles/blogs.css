@@ -1,0 +1,12 @@
+.news h2 {
+  text-align: center;
+  margin: 60px auto;
+  font-size: 32px;
+}
+
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}

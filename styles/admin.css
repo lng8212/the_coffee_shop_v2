@@ -1,0 +1,98 @@
+.admin-input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #ccc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.admin-preview {
+  width: 100%;
+}
+
+.admin-tab {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.admin-tab a {
+  height: 60px;
+  line-height: 60px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.admin-tab a:hover,
+.admin-tab a.active {
+  border-bottom: 2px solid #1c64bd;
+  color: #1c64bd;
+}
+
+.admin-tab a:first-child {
+  margin-right: 100px;
+}
+
+.admin-container {
+  max-width: 900px;
+  padding: 40px;
+  margin: 0px auto;
+}
+
+.admin h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.admin table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 50px auto;
+}
+
+.admin th {
+  background: #ffab3b;
+  color: white;
+  font-weight: bold;
+}
+
+.admin td,
+.admin th {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.admin-image {
+  width: 80px;
+}
+
+.admin-action button {
+  height: 30px;
+  padding: 2px 16px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.admin-action button:first-child {
+  background-color: #bd391c;
+  margin-right: 10px;
+}
+
+.admin-action button:last-child {
+  background-color: #1c64bd;
+}
+
+.admin .btn-add {
+  height: 30px;
+  padding: 2px 16px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+  background-color: #1cbd39;
+}

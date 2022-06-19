@@ -1,0 +1,153 @@
+.order h2 {
+  text-align: center;
+  margin: 60px auto;
+  font-size: 32px;
+}
+
+.order-product {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.modal-top {
+  display: flex;
+}
+
+.modal .order-image {
+  margin-right: 20px;
+  flex: 1;
+}
+
+.modal .order-image img {
+  border-radius: 20px;
+  width: 100%;
+}
+
+.modal .order-order {
+  flex: 1;
+}
+
+.modal .order-order h1 {
+  margin-top: 0;
+}
+
+.modal .order-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.modal .order-number {
+  display: flex;
+  align-items: center;
+}
+
+.modal .order-number .btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+}
+
+.modal .order-number .btn-minus {
+  background-color: #ccc;
+  margin-right: 10px;
+}
+
+.modal .order-number .btn-add {
+  background-color: #ffab3b;
+  margin-left: 10px;
+}
+
+.modal .order-more {
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+.modal .order-more .title {
+  height: 40px;
+  background-color: rgb(157, 157, 157);
+  line-height: 40px;
+  padding-left: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.modal .order-more .title-first {
+  border-radius: 20px 20px 0px 0px;
+}
+
+.modal .order-more .order-size {
+  padding: 20px 10px;
+}
+
+.modal .order-more .order-size form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal .order-more .order-size form div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.modal .order-more .order-size form input {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.modal .order-more .order-size form label {
+  line-height: 20px;
+}
+
+.modal .order-more .order-topping {
+  padding: 20px;
+}
+
+.modal .order-more .order-topping__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.modal .order-more .order-topping__item:last-child {
+  border: none;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.modal .order-more .order-topping__name p:last-child {
+  font-weight: bold;
+}
+
+.modal button {
+  height: 50px;
+  border: none;
+  border-radius: 50px;
+  margin-top: 20px;
+  width: 100%;
+  background-color: #ffab3b;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.modal button:disabled {
+  background-color: #ccc;
+  cursor: default;
+}

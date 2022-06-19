@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coffee House</title>
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <link rel="stylesheet" type="text/css" href="./styles/header.css">
+    <link rel="stylesheet" type="text/css" href="./styles/home.css">
+    <link rel="stylesheet" type="text/css" href="./styles/product-item.css">
+    <link rel="stylesheet" type="text/css" href="./styles/news-item.css">
+    <link rel="stylesheet" type="text/css" href="./styles/footer.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-wrapper container">
+            <a href="/">
+                <img src='./assets/logo.png' alt="logo" class="logo" />
+            </a>
+            <nav>
+                <a href="/products">Đặt hàng</a>
+                <a href="/blogs">Tin tức</a>
+            </nav>
+            <a href="/checkout">
+                <span class="header-bag">
+                    <img src='./assets/bag.svg' alt="bag" />
+                    <span class="number-of-bag" id="number-of-bag">0</span>
+                </span>
+            </a>
+        </div>
+    </header>
+
+    <div class="home">
+        <div class="home-banner">
+            <div class="main-slider">
+                <img src="https://minio.thecoffeehouse.com/image/admin/1651346143_banner-web.jpg" alt="">
+                <img src="https://minio.thecoffeehouse.com/image/admin/1652800830_banner-web.jpg" alt="">
+                <img src="https://minio.thecoffeehouse.com/image/admin/1651346340_web-cu.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Sản phẩm</h2>
+            <div class="loading">
+                <img src="./assets/loading.svg" alt="Loading..." />
+            </div>
+            <div class="home-product" id="getDrinksHome">
+                <!-- <div class="product-item">
+                    <img src="https://minio.thecoffeehouse.com/image/admin/1639377738_ca-phe-sua-da_400x400.jpg"
+                        alt="Cà Phê Sữa Đá" />
+                    <h3>Cà Phê Sữa Đá</h3>
+                    <div class="product-item__price">
+                        <div>
+                            <p class="price-discount">
+                                29000 đ
+                            </p>
+                            <p class="price">24500 đ</p>
+                        </div>
+                        <span class="btn-add" id="myBtn">
+                            <img src='./assets/plus.svg' alt="" />
+                        </span>
+                    </div>
+                </div> -->
+            </div>
+            <div class="home-all">
+                <a href="/products">Xem tất cả</a>
+            </div>
+            <h2>Tin tức</h2>
+            <div class="loading">
+                <img src="./assets/loading.svg" alt="Loading..." />
+            </div>
+            <div class="home-new" id="getNewsHome">
+                <!-- <div class="new-item">
+                    <img src="https://feed.thecoffeehouse.com//content/images/2022/03/NEWS--1-.jpg"
+                        alt="CÓ CÔNG TÍCH LUỸ BEAN - CÓ NGÀY NHẬN DEAL ĐẬM" />
+                    <div class="new-item-content">
+                        <h3>CÓ CÔNG TÍCH LUỸ BEAN - CÓ NGÀY NHẬN DEAL ĐẬM</h3>
+                        <div class="new-btn">
+                            <a>Đọc tiếp</a>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+            <div class="home-all">
+                <a href="/blogs">Xem tất cả</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="ex1" class="modal">
+        <div class="mymodal">
+            <div class="mymodal-content">
+                <div class="loading">
+                    <img src="./assets/loading.svg" alt="Loading..." />
+                </div>
+                <div class="mymodal-top" id="getDrinkModal">
+                    <!-- <div class="order-image">
+                        <img id="drinkImageModal" />
+                    </div>
+                    <div class="order-order">
+                        <h1 id="drinkNameModal"></h1>
+                        <div class="order-price">
+                            <div class="order-price__text">
+                                <p id="drinkPriceModal"></p>
+                            </div>
+                            <div class="order-number">
+                                <span class="btn btn-minus">-</span>1
+                                <span class="btn btn-add">+</span>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div>
+                    <div class="order-more">
+                        <div class="title title-first">Chọn size (bắt buộc)</div>
+                        <div class="loading">
+                            <img src="./assets/loading.svg" alt="Loading..." />
+                        </div>
+                        <div class="order-size">
+                            <form id="getListSize">
+                                <!-- <div>
+                                    <input type="radio" id="to" name="size" value="to" />
+                                    <label for="to">
+                                        <p>To</p>
+                                        <p>+ 20000 đ</p>
+                                    </label>
+                                </div> -->
+                            </form>
+                        </div>
+                        <div class="title">Chọn topping (tuỳ chọn)</div>
+                        <div class="loading">
+                            <img src="./assets/loading.svg" alt="Loading..." />
+                        </div>
+                        <div class="order-topping" id="getListTopping">
+                            <!-- <div class="order-topping__item">
+                                <div class="order-topping__name">
+                                    <p>Kem Phô Mai Macchiato</p>
+                                    <p>+ 10000 đ</p>
+                                </div>
+                                <div class="order-number">
+                                    <span class="btn btn-minus">-</span>1
+                                    <span class="btn btn-add">+</span>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <button type="button" id="buttonAddModal" onclick="addToCart()">
+                        Thêm vào giỏ hàng
+                    </button>
+                </div>
+            </div>
+            <a href="#" rel="modal:close" id="close-mymodal" style="display: none">Close</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-content container">
+                <a href="/">
+                    <img src="./assets/logo-white.webp" alt="" />
+                </a>
+                <div class="footer-column">
+                    <h3>Thông tin website</h3>
+                    <div>
+                        <a href="/">Trang chủ</a>
+                        <a href="/products">Đặt hàng</a>
+                        <a href="/blogs">Tin tức</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Hotline</h3>
+                    <div>
+                        <a href="/products">Đặt hàng 1800 6936 (07:00-20:30)</a>
+                        <a href="/">Hỗ trợ 028.71.087.088 (07:00-21:00)</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liên hệ</h3>
+                    <div>
+                        <a href="/">
+                            Địa chỉ: 86 - 88 Cao Thang, Ward 4, District 3, Ho Chi Minh,
+                            Vietnam
+                        </a>
+                        <a href="/">Điện thoại: +842871 078 079</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right">
+            Copyright © 2021 The Coffee House. All rights reserved.
+        </div>
+    </footer>
+    <script type="text/javascript" src="./js/header.js"></script>
+    <script type="text/javascript" src="./js/home.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.main-slider').slick({
+                prevArrow: null,
+                nextArrow: null,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
+        });
+    </script>
+</body>
+
+
+</html>
