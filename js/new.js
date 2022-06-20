@@ -24,7 +24,7 @@ $(document).ready(function () {
                     <div class="new-item-content">
                         <h3>${item.name_news}</h3>
                         <div class="new-btn">
-                            <a href="/blogs/detail?id=${item.id_news}">Đọc tiếp</a>
+                            <a href="/blogs/detail.html?id=${item.id_news}">Đọc tiếp</a>
                         </div>
                     </div>
                 </div>
