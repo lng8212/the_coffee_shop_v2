@@ -96,12 +96,74 @@ $(document).ready(function () {
 
   let form = $("#formOrder");
 
-  form.submit(function (e) {
+  form.submit(async function (e) {
     e.preventDefault();
     var ten = $('[name="ten"]').val();
     var sdt = $('[name="sdt"]').val();
     var diachi = $('[name="diachi"]').val();
     var ac = $('[name="ac"]').val();
-    console.log(ten, sdt, diachi, ac, cartGlobal);
+    const customer = {
+      name_customer: ten,
+      phone_number: sdt,
+      address: diachi,
+    };
+    const list_bill_detail = cartGlobal.map((c) => {
+      console.log(c);
+      const size_id = c.listSize.find((li) => li.name_size === c.size).id_size;
+      return {
+        id_product: c.id,
+        id_size: size_id,
+        amount: c.quantity,
+        note: "",
+        list_topping: c.topping.map((item) => {
+          return {
+            id_topping: item,
+          };
+        }),
+      };
+    });
+    console.log(ten, sdt, diachi, ac, cartGlobal, customer, list_bill_detail);
+
+    let note = prompt("Ghi chú cho đơn hàng này:", "");
+    if (note == null || note == "") {
+      note = "";
+    }
+
+    const data = {
+      customer,
+      list_bill_detail,
+      note_of_bill: note,
+      order_day: new Date().toLocaleDateString("vi"),
+    };
+
+    console.log(data);
+
+    fetch(`${API_URL}/checkout`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      mode: "no-cors",
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log("Error nhé: \n", error);
+      });
+
+    // $.ajax({
+    //   type: "POST",
+    //   url: `${API_URL}/checkout`,
+    //   data: JSON.stringify(data),
+    //   success: function (result) {
+    //     console.log(result);
+    //   },
+    //   cache: false,
+    //   dataType: "jsonp",
+    //   crossDomain: true,
+    //   headers: {
+    //     accept: "application/json",
+    //     "Access-Control-Allow-Origin": "*",
+    //   },
+    // });
   });
 });
