@@ -129,41 +129,33 @@ $(document).ready(function () {
       note = "";
     }
 
+    const date = new Date();
+
     const data = {
       customer,
       list_bill_detail,
       note_of_bill: note,
-      order_day: new Date().toLocaleDateString("vi"),
+      order_day:
+        date.getFullYear() +
+        "-" +
+        ("0" + (date.getMonth() + 1)).slice(-2) +
+        "-" +
+        ("0" + date.getDate()).slice(-2),
     };
 
-    console.log(data);
-
-    fetch(`${API_URL}/checkout`, {
+    const rawResponse = await fetch(`${API_URL}/checkout`, {
       method: "POST",
-      body: JSON.stringify(data),
       mode: "no-cors",
-    })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log("Error nhé: \n", error);
-      });
-
-    // $.ajax({
-    //   type: "POST",
-    //   url: `${API_URL}/checkout`,
-    //   data: JSON.stringify(data),
-    //   success: function (result) {
-    //     console.log(result);
-    //   },
-    //   cache: false,
-    //   dataType: "jsonp",
-    //   crossDomain: true,
-    //   headers: {
-    //     accept: "application/json",
-    //     "Access-Control-Allow-Origin": "*",
-    //   },
-    // });
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: JSON.stringify(data),
+    });
+    if (rawResponse) {
+      sessionStorage.clear();
+      alert("Bạn đã đặt hàng thành công!");
+      window.location.href = "/";
+    }
   });
 });
