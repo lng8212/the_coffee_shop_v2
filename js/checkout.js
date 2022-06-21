@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/CoffeeShop";
+const API_URL = "http://localhost:8080/CoffeeShop/";
 var total = 0;
 
 var cartGlobal = [];
