@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  let cartJSON = sessionStorage.getItem("cart");
+  let cartJSON = localStorage.getItem("cart");
   let carts = [];
   if (cartJSON) {
     carts = JSON.parse(cartJSON);

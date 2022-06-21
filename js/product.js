@@ -20,7 +20,7 @@ var item = {
 function addToCart() {
   console.log(item);
   cart.push(item);
-  sessionStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("cart", JSON.stringify(cart));
   alert("Thêm vào giỏ hàng thành công!");
   const numberOfCart = $(".number-of-bag").text();
   $("#number-of-bag").text(Number(numberOfCart) + 1);
@@ -99,7 +99,7 @@ function onDecreQuantityTopping(id, price) {
 }
 
 $(document).ready(function () {
-  let cartJSON = sessionStorage.getItem("cart");
+  let cartJSON = localStorage.getItem("cart");
   let carts = [];
   if (cartJSON) {
     carts = JSON.parse(cartJSON);

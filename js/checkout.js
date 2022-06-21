@@ -11,7 +11,7 @@ function orderCart(e) {
 
 function deleteAllCart() {
   const newCart = [];
-  sessionStorage.setItem("cart", JSON.stringify(newCart));
+  localStorage.setItem("cart", JSON.stringify(newCart));
 
   $("#getCartItems").empty();
 
@@ -22,7 +22,7 @@ function deleteAllCart() {
 
 function deleteFromCart(id) {
   const newCart = cartGlobal.filter((c) => c.id !== id);
-  sessionStorage.setItem("cart", JSON.stringify(newCart));
+  localStorage.setItem("cart", JSON.stringify(newCart));
 
   $("#getCartItems").empty();
 
@@ -57,7 +57,7 @@ function deleteFromCart(id) {
 }
 
 $(document).ready(function () {
-  let cartJSON = sessionStorage.getItem("cart");
+  let cartJSON = localStorage.getItem("cart");
   $("#getCartItems").empty();
   $("#orderCart").attr("disabled", true);
   if (cartJSON) {
@@ -153,7 +153,7 @@ $(document).ready(function () {
       body: JSON.stringify(data),
     });
     if (rawResponse) {
-      sessionStorage.clear();
+      localStorage.clear();
       alert("Bạn đã đặt hàng thành công!");
       window.location.href = "/";
     }
